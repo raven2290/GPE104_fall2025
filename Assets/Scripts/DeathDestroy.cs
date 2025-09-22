@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DeathRender : Death
+public class DeathDestroy : Death
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -13,11 +13,11 @@ public class DeathRender : Death
     {
 
     }
-
+    
     public override void Die()
     {
-        //  moves object back to center
-        //this.gameObject.transform.position = new Vector3.zero; (0,0,0)
-        transform.position = Vector3.zero;
+        //destroy the game object
+        //this.gameObject
+        Destroy(this.gameObject);
     }
 }

@@ -45,8 +45,15 @@ public class Health : MonoBehaviour
         Debug.Log("hit");
 
         //TODO: tell the death component to die
-
-       // if death
+        if (deathComponent != null)
+        {
+            deathComponent.Die();
+            // if death
+        }
+        else
+        {
+            Debug.LogWarning("warning: " + gameObject.name + " has no death component!");
+        }
     }
 
 }
