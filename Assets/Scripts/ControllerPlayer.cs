@@ -16,38 +16,37 @@ public class ControllerPlayer : Controller
     {
         //#.movement()
         { //basic movements
+            
             if
                 (
                     Input.GetKey(KeyCode.W)
                     || Input.GetKey(KeyCode.UpArrow)
 
                 )
-            {
-                //Transform tf = this.gameObject.GetComponent<Transform>(); **long version
 
-                pawn.Move(pawn.transform.up);
-            }
+                {
+                    //Transform tf = this.gameObject.GetComponent<Transform>(); **long version
+                    pawn.Move(pawn.transform.up);
+                }
             else if
                 (
                     Input.GetKey(KeyCode.S)
                     || Input.GetKey(KeyCode.DownArrow)
                 )
-            {
-                pawn.Move(-pawn.transform.up);
-            }
-
+                {
+                    pawn.Move(-pawn.transform.up);
+                }
+        }
 
             if
                 (
                     Input.GetKey(KeyCode.A)
                     || Input.GetKey(KeyCode.LeftArrow)
-                   
-
                 )
-            {
-                pawn.Rotate(1.0f);
-                Debug.Log("rotate left");
-            }
+                {
+                    pawn.Rotate(1.0f);
+                    Debug.Log("rotate left");
+                }
 
             else if
                 (
@@ -55,31 +54,36 @@ public class ControllerPlayer : Controller
                     || Input.GetKey(KeyCode.RightArrow)
 
                 )
-            {
-                pawn.Rotate(-1.0f);
-                Debug.Log("rotate right");
-            }
-        }
+                    {
+                        pawn.Rotate(-1.0f);
+                        Debug.Log("rotate right");
+                    }
+        
         //#.advanced movement
-        if
-            (
-                Input.GetKey(KeyCode.LeftShift)
-                && Input.GetKey(KeyCode.W)
-                || Input.GetKey(KeyCode.UpArrow)
-            )
-        {
-            pawn.Move(2 * (pawn.transform.up));
-        }
+        if (Input.GetKey(KeyCode.LeftShift))
+            {
+                if
+                    (
+                        Input.GetKey(KeyCode.W)
+                        || Input.GetKey(KeyCode.UpArrow)
 
-        else if
-            (
-                Input.GetKey(KeyCode.LeftShift)
-                && Input.GetKey(KeyCode.S)
-                || Input.GetKey(KeyCode.DownArrow)
-            )
-        {
-            pawn.Move(2 * (-pawn.transform.up));
-        }
+                    )
+                {
+                    //Transform tf = this.gameObject.GetComponent<Transform>(); **long version
+
+                    pawn.Move(2 * pawn.transform.up);
+                }
+                else if
+                    (
+                        Input.GetKey(KeyCode.S)
+                        || Input.GetKey(KeyCode.DownArrow)
+                    )
+                {
+                    pawn.Move(2 * -pawn.transform.up);
+                }
+            }
+
+            
         
             //#.straffing() TODO: CREATE STRAFFING EFFECT ???
         { //move left or right without changing facing direction

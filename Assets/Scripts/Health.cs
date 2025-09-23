@@ -29,6 +29,17 @@ public class Health : MonoBehaviour
             Die();
         }
     }
+
+    public void TakeDamage(float damage, Pawn damageDealer)
+    {
+        // TODO: give points to the damage dealer
+        //
+        Debug.Log(damageDealer.gameObject.name + "did" + damage + "damage to " + this.gameObject.name);
+
+        // actually take damage
+        TakeDamage(damage);
+    }
+
     public void Heal(float healAmaount)
     {
         currentHealth = currentHealth + healAmaount;
