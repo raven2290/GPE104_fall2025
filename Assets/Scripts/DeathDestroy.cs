@@ -18,6 +18,6 @@ public class DeathDestroy : Death
     {
         //destroy the game object
         //this.gameObject
-        Destroy(this.gameObject);
+        Destroy(gameObject);
     }
 }

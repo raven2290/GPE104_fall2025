@@ -13,6 +13,7 @@ public class Health : MonoBehaviour
     {
         //stat with max health
         currentHealth = maxHealth;
+        Debug.Log("Max Health is " + maxHealth);
     }
 
     // Update is called once per frame

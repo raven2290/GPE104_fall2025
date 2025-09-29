@@ -1,23 +1,20 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class DeatDestroy : Death
+public class BulletMover : MonoBehaviour
 {
+    public float moveSpeed;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        // move the bullet forward
+        transform.position = transform.position + (transform.up * moveSpeed * Time.deltaTime);
 
-    }
-    public override void Die()
-    {
-        //destroy the game object
-        //this.gameObject.
-       // Destroy(this.gameObject);
     }
 }

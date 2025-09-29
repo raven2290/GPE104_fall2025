@@ -436,7 +436,7 @@ MonoBehaviour:
   playerPawnPrefab: {fileID: 6739623022114624031, guid: 96e894f6b00350241b2721a64114d355, type: 3}
   playerControllerPrefab: {fileID: 133369841818095862, guid: 074f4d99451e1284db98a5c81d254d55, type: 3}
   meteorPrefab: {fileID: 8222686016659010389, guid: 0a18fdd2c1dc02a45a90d3aa2b3962f5, type: 3}
-  enemyStarShipPrefab: {fileID: 3033504756877935114, guid: b0304e79afbd3cb439d289e80822cdbf, type: 3}
+  enemyStarShipPrefab: {fileID: 0}
   score: 0
   topScore: 0
   maxLives: 3
@@ -446,6 +446,7 @@ MonoBehaviour:
   - {fileID: 387345215}
   - {fileID: 1114517588}
   - {fileID: 2061393634}
+  enemyStarShipSpawnPoints: []
 --- !u!4 &680535804
 Transform:
   m_ObjectHideFlags: 0

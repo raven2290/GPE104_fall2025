@@ -4,6 +4,8 @@ public class StarshipPawn : Pawn
 {
     public float moveSpeed; //the speed of pawn
     public float rotationSpeed; //speed of rotation
+    public Shooter shooterComponent; // the component that handles shooting
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected override void Start()
@@ -17,6 +19,11 @@ public class StarshipPawn : Pawn
 
     // Update is called once per frame
     void Update()
+    {
+
+    }
+
+    public void Shoot()
     {
 
     }

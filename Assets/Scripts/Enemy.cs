@@ -1,34 +1,24 @@
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public abstract class Enemy : MonoBehaviour
 {
-    public Pawn target;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public Health health;
+    public Shooter shooter;
+    public abstract void Move(Vector3 moveVector);
+    public abstract void Rotate(float angle);
+
+    protected virtual void Start()
     {
-        
-    }
+        //load the health component
+        health = GetComponent<Health>();
+        // verify the health component
+        if (health == null)
+            Debug.LogWarning(gameObject.name + "does not have a health component");
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            target.health.TakeDamage(1);
-            //Debug.Log("OW");
-        }
+        // load the shooter component
+        shooter = GetComponent<Shooter>();
 
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            target.health.Heal(1);
-            //Debug.Log("YAY");
-        }
+        // TODO: verify the shooter component
 
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            target.health.Die();
-            //Debug.Log("I DIED");
-        }
-        
     }
 }
